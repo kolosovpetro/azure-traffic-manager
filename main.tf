@@ -74,3 +74,10 @@ module "blue_slot" {
     module.network
   ]
 }
+
+module "traffic_manager_profile" {
+  source              = "./modules/traffic-manager-profile"
+  profile_name        = "tm-profile-${var.prefix}"
+  relative_name       = "tmprofile${var.prefix}"
+  resource_group_name = azurerm_resource_group.public.name
+}
