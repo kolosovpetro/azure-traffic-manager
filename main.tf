@@ -81,3 +81,29 @@ module "traffic_manager_profile" {
   relative_name       = "tmprofile${var.prefix}"
   resource_group_name = azurerm_resource_group.public.name
 }
+
+module "traffic_manager_endpoint_green" {
+  source                                      = "./modules/traffic-manager-endpoint"
+  traffic_manager_endpoint_name               = "green-endpoint-${var.prefix}"
+  traffic_manager_endpoint_target_resource_id = module.green_slot.public_ip_id
+  traffic_manager_endpoint_weight             = 500
+  traffic_manager_profile_id                  = module.traffic_manager_profile.id
+
+  depends_on = [
+    module.traffic_manager_profile,
+    module.green_slot
+  ]
+}
+
+module "traffic_manager_endpoint_blue" {
+  source                                      = "./modules/traffic-manager-endpoint"
+  traffic_manager_endpoint_name               = "blue-endpoint-${var.prefix}"
+  traffic_manager_endpoint_target_resource_id = module.blue_slot.public_ip_id
+  traffic_manager_endpoint_weight             = 500
+  traffic_manager_profile_id                  = module.traffic_manager_profile.id
+
+  depends_on = [
+    module.traffic_manager_profile,
+    module.blue_slot
+  ]
+}

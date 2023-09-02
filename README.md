@@ -61,6 +61,8 @@ sas_token            = "sas_token"
 | <a name="module_blue_slot"></a> [blue\_slot](#module\_blue\_slot) | ./modules/ubuntu-vm-public-key-auth | n/a |
 | <a name="module_green_slot"></a> [green\_slot](#module\_green\_slot) | ./modules/ubuntu-vm-public-key-auth | n/a |
 | <a name="module_network"></a> [network](#module\_network) | ./modules/network | n/a |
+| <a name="module_traffic_manager_endpoint_blue"></a> [traffic\_manager\_endpoint\_blue](#module\_traffic\_manager\_endpoint\_blue) | ./modules/traffic-manager-endpoint | n/a |
+| <a name="module_traffic_manager_endpoint_green"></a> [traffic\_manager\_endpoint\_green](#module\_traffic\_manager\_endpoint\_green) | ./modules/traffic-manager-endpoint | n/a |
 | <a name="module_traffic_manager_profile"></a> [traffic\_manager\_profile](#module\_traffic\_manager\_profile) | ./modules/traffic-manager-profile | n/a |
 
 ## Resources
