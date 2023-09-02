@@ -1,9 +1,6 @@
-# Terraform template
+# Azure Traffic Manager
 
-Terraform template for modules and sub-modules.
-Includes pre-commit hooks that lint the terraform code and generate module's
-documentation as part of README file.
-Contains examples of terraform CI/CD pipelines for GitHub Actions and Azure Pipelines.
+Example of blue green deployment using Azure Traffic Manager and Linux VMs
 
 ## Pre-commit configuration
 
@@ -61,7 +58,7 @@ sas_token            = "sas_token"
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | ./modules/example_submodule | n/a |
+| <a name="module_network"></a> [network](#module\_network) | ./modules/network | n/a |
 
 ## Resources
 

@@ -2,11 +2,14 @@ data "azurerm_client_config" "current" {}
 
 resource "azurerm_resource_group" "public" {
   location = var.resource_group_location
-  name     = local.rg_name
+  name     = local.resource_group_name
 }
 
-module "resource_group" {
-  source                  = "./modules/example_submodule"
-  resource_group_location = "northeurope"
-  resource_group_name     = "rg-from-module"
+module "network" {
+  source                  = "./modules/network"
+  nsg_name                = local.nsg_name
+  resource_group_location = azurerm_resource_group.public.location
+  resource_group_name     = azurerm_resource_group.public.name
+  subnet_name             = local.subnet_name
+  vnet_name               = local.vnet_name
 }
